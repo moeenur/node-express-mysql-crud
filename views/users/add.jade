@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    h3.text-right Add user
+    form#UserAddForm(accept-charset='utf-8', method='post', name='useraddform', action='/add')
+      .form-group
+        label(for='full_name') Full name
+        |                         
+        input#UserName.form-control(type='text', placeholder='Type your name', name='name')
+      |                     
+      .form-group
+        label(for='email') Email Address
+        |                         
+        input#UserEmail.form-control(type='email', placeholder='Type your email address', name='email')
+      |                     
+      .form-group
+        label(for='phone') Phone no.
+        |                         
+        input#UserPhone.form-control(type='number', placeholder='Type your phone no.', name='phone')
+      |                     
+      .form-group
+        button#addUserBtn.btn.btn-primary(type='submit')
+          i.glyphicon.glyphicon-plus
+          | &#x3000;Submit

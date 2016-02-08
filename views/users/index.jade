@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+    a.btn.btn-primary(href='/add', data-toggle='tooltip', data-placement='top', title='Add user')
+      i.glyphicon.glyphicon-pencil
+    hr
+    .panel.panel-default.table-responsive
+      .panel-heading
+        h3.panel-title 
+            i.glyphicon.glyphicon-user 
+            | &#x3000;User list
+      |   
+      table.table.table-striped.table-condensed.table-hover
+        thead
+          tr
+            th
+              | Name
+            |         
+            th
+              | Email
+            |         
+            th
+              | Phone 
+            |         
+            th
+              | Action
+        |       
+        tbody
+        if(users.length > 0)
+          each user in users
+              tr
+                td= user.name
+                |         
+                td= user.email
+                |         
+                td= user.phone
+                |         
+                td
+                  .btn-group
+                    a.btn.btn-default(href='/update/#{user.id}', data-toggle='tooltip', data-placement='top', title='Update user')
+                      i.glyphicon.glyphicon-edit
+                    a.btn.btn-danger(href='/delete/#{user.id}', data-toggle='tooltip', data-placement='top', title='Delete user')
+                      i.glyphicon.glyphicon-trash
+                | 
+        else
+         tr.danger.text-center
+            td(colspan='4') Sorry, no record found!
+      table

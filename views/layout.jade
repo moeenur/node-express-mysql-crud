@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    // Optional theme
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    // customized theme
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    a(href='/')
+        .page-header
+          h1= title
+            small  using node, express, mysql
+
+    block content
+    
+    script(type='text/javascript' src='/javascripts/jquery-2.2.0.min.js')
+    script(type='text/javascript' src='/javascripts/bootstrap.min.js')
